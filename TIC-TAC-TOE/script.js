@@ -21,11 +21,11 @@ const checkwin = () =>{
     wins.forEach(e =>{
         if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")) {
             document.querySelector(".info").innerText = boxtext[e[0]].innerText + " Won"
-            gameover = true;
+          
             document.querySelector(`.line`).style.transform = `translate(${e[3]}vw , ${e[4]}vw) rotate(${e[5]}deg)`;
             document.querySelector(`.line`).style.width = "25vw";
 
-
+            gameover = true;
         }
     })
 }
@@ -56,4 +56,28 @@ Array.from(boxes).forEach(element =>{
             }
         }
     })
+})
+
+
+// cutomized cursor
+
+const cursorPointer = document.querySelector(".cursorPointer");
+const cursorOutline = document.querySelector(".cursorOutline")
+
+window.addEventListener("mousemove" , function(e){
+    const posX = e.clientX;
+    const posY =e.clientY
+    cursorPointer.style.left =`${posX}px`;
+    cursorPointer.style.top =`${posY}px`;
+
+
+    cursorOutline.style.left =`${posX}px`;
+    cursorOutline.style.top =`${posY}px`;
+    cursorOutline.animate({
+        left:`${posX}px`,
+        top:`${posY}px`
+    },{
+        duration:400 , fill:"forwards"
+    })
+
 })

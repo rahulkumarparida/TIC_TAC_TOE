@@ -1,6 +1,28 @@
 *{
     margin: 0;
     padding: 0;
+   
+}
+
+.cursorPointer{
+width: 5px;
+height: 5px;
+background-color: transparent;
+}
+.cursorOutline{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid aqua;
+}
+.cursorPointer , .cursorOutline{
+    position: fixed;
+    border-radius: 50%;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    transform: translate(-50% ,-50%);
+    pointer-events: none;
 }
 nav{
     padding-left: 10px;
@@ -52,9 +74,9 @@ position: relative;
     font-size: larger;
 }
 .line{
-    background-color: black;
-    width: 0;
-    height: 1px;
+    background-color: rgb(0, 252, 248);
+    width:0;
+    height: 5px;
   position: absolute;  
  transition: width 0.3s ease-in-out;
    
@@ -66,6 +88,7 @@ position: relative;
     color: white;
     border-radius: 4px; 
 }
+
 @media  screen and (max-width:800px) {
     .gamecontainer{
         display: flex;
